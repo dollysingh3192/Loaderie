@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.circular {
+    position: relative;
+    display: inline-block;
+    width: 140px;
+    height: 140px;
+    transform: rotate(-90deg);
+    background-color: transparent !important;
+}
+
+.circle {
+    animation: circular-indeterminate-bar-rotate 2s linear infinite;
+}
+
+.path {
+    animation: circular-indeterminate-bar-dash 1.5s ease-in-out infinite;
+    transition: stroke-dasharray 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    fill: none;
+    stroke-dasharray: 0, 250;
+    stroke-dashoffset: 0;
+    stroke-linecap: round;
+    stroke-miterlimit: 20;
+    stroke-width: 4;
+    stroke: #2196f3 ;
+    stroke-dasharray: 2, 400;
+    stroke-dashoffset: 0;
+}
+
+@keyframes circular-indeterminate-bar-dash {
+    0% {
+        stroke-dasharray: 2, 400;
+        stroke-dashoffset: 0;
+    }
+    50% {
+        stroke-dasharray: 180, 400;
+        stroke-dashoffset: -70;
+    }
+    100% {
+        stroke-dasharray: 180, 400;
+        stroke-dashoffset: 248;
+    }
+}
+
+@keyframes circular-indeterminate-bar-rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+</style>
+</head>
+<body>
+
+
+<div  class="circular">
+<svg class="circle" viewBox="0 0 60 60"><circle class="path" cx="30" cy="30" r="25"></circle></svg></div>
+
+</body>
+</html>
